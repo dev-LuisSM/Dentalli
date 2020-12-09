@@ -1,5 +1,5 @@
 ## Dentalli - Depósito Dental :tooth:
-**Rediseño web de [Dentalli]** 
+**Rediseño web de _Dentalli_** 
 
 ## Construido con 🛠️
 HTML5 - CSS3 - Javascript (jQuery)
