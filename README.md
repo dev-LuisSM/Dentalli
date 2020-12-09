@@ -1,2 +1,4 @@
-# Dentalli - Depósito Dental
-_Rediseño web de [Dentalli](www.dentalli.com.mx)_ 
+# Dentalli - Depósito Dental :tooth:
+**Rediseño web de [Dentalli](www.dentalli.com.mx)** 
+
+
