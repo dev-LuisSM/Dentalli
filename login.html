@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Dentalli</title>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+
+    <!-- Links -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+    <link rel="icon" href="images/dentalli-icon.ico">
+
+</head>
+
+<body>
+
+    <nav>
+        <img class="dentalli-logo" src="images/dentalli.png" alt="Logo Dentalli" 
+        onclick="location.href='index.html'">
+
+        <div class="nav-links">
+            <div class="ul-links">
+                <div class="glass"></div>
+                <ul>
+                    <h3>MENÚ</h3>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Categorías</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <img src="images/dentalli-icon.ico" alt="">
+                </ul>
+            </div>
+
+            <div class="nav-mobile">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <div class="btn-login">
+                <button onclick="location.href='login.html'">Iniciar Sesión</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="login">
+        <div class="login-svg"></div>
+        <div class="login-data">
+            <div id="login">
+                <h3>Iniciar Sesión</h3>
+                <form class="form-login" action="">
+                    <div class="inpt-data">
+                        <label for="correo-login">Correo</label>
+                        <input type="email" id="correo-login" required>
+                    </div>
+                    
+                    <div class="inpt-data">
+                        <label for="pwrd-login">Contraseña</label>
+                        <input type="password" id="pwrd-login" required>
+                    </div>
+
+                    <label class="remember">
+                        <input type="checkbox" checked="checked">
+                        <span class="checkmark"></span>Recuérdame
+                    </label>    
+
+                    <div class="inpt-data">
+                        <button type="submit">Ingresar</button>
+                    </div>
+                </form>
+                <p>¿Aún no tienes cuenta? Regístrate <span class="change">aquí.</span></p>
+            </div>
+
+            <div id="registro">
+                <h3>Registro</h3>
+                <form class="form-login" action="">
+                    <div class="inpt-new">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" required>
+                    </div>
+
+                    <div class="apellidos">
+                        <div class="inpt-new">
+                            <label for="materno">A. Materno</label>
+                            <input type="text" id="materno" required>
+                        </div>
+                        
+                        <div class="inpt-new">
+                            <label for="paterno">A. Paterno</label>
+                            <input type="text" id="paterno" required>
+                        </div>
+                    </div>
+
+                    <div class="inpt-new">
+                        <label for="email-new">Email</label>
+                        <input type="email" id="email-new" required>
+                    </div>
+
+                    <div class="inpt-new">
+                        <label for="pwrd-new">Contraseña</label>
+                        <input type="password" id="pwrd-new" required>
+                    </div>
+
+                    <div class="inpt-new">
+                        <label for="pwrd-new-conf">Confirmar contraseña</label>
+                        <input type="password" id="pwrd-new-conf" required>
+                    </div>
+
+                    <div class="inpt-new telefono">
+                        <label for="numero">Número de Teléfono</label>
+                        <input type="tel" id="numero" maxlength="10" required>
+                    </div>
+
+                    <div class="inpt-new">
+                        <button type="submit">Ingresar</button>
+                    </div>
+
+                </form>
+                <p>¿Ya tienes cuenta? Inicia sesión <span class="change">aquí.</span></p>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="footer-logo">
+            <img src="images/dentalli-nombre.png" alt="Logo Dentalli">
+        </div>
+        <div class="ul-footer">
+            <ul>
+                <li><a href="#">Contáctanos</a></li>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Política de Privacidad</a></li>
+                <li><a href="#">Términos y Condiciones</a></li>
+            </ul>
+        </div>
+        <div class="boletin">
+            <p>Suscríbete al boletín <i class="far fa-envelope"></i> </p>
+            <form>
+                <p><input type="email" />
+                    <button>Suscribirse</button>
+                </p>
+            </form>
+        </div>
+    </footer>
+    <section class="after-footer">
+        <p> <span> © Copyright 2020 Dentalli. All Rights Reserved. </span>
+            <span>
+                <a href="https://api.whatsapp.com/send?phone=527711299985&text=¡Buen%20día!%20Quisiera%20preguntar%20sobre%20sus%20productos."
+                    target="_blank">
+                    <i class="fab fa-whatsapp"></i></a>
+
+                <a href="https://www.facebook.com/dentallidepositodental" target="_blank">
+                    <i class="fab fa-facebook"></i></a>
+
+                <a href="mailto: grupodentalpachuca@gmail.com">
+                    <i class="fa fa-envelope"></i></a>
+
+                <a href="http://maps.google.com/?q=Depósito Dental Dentalli Grupo Dental Pachuca S.A. de C.V."
+                    target="_blank">
+                    <i class="fas fa-map-marker-alt"></i></a>
+            </span>
+        </p>
+    </section>
+
+</body>
+</html>

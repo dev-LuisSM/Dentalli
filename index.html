@@ -1,44 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Dentalli</title>
 
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
-    
 
     <!-- Links -->
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/style.css" />
     <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
     <link rel="icon" href="images/dentalli-icon.ico">
 
-
 </head>
+
 <body>
 
     <nav>
-        <img class="dentalli-logo" src="images/dentalli.png" alt="Logo Dentalli">
+        <img class="dentalli-logo" src="images/dentalli.png" alt="Logo Dentalli" 
+        onclick="location.href='index.html'">
         
         <div class="nav-links">
             <div class="ul-links">
+                <div class="glass"></div>
                 <ul>
-                    <li><a href="#">Inicio</a></li>
+                    <h3>MENÚ</h3>
+                    <li><a href="index.html">Inicio</a></li>
                     <li><a href="#">Nosotros</a></li>
                     <li><a href="#">Categorías</a></li>
                     <li><a href="#">Contacto</a></li>
+                    <img src="images/dentalli-icon.ico" alt="">
                 </ul>
-                
             </div>
 
             <div class="nav-mobile">
                 <i class="fas fa-bars"></i>
             </div>
-            
+
             <div class="btn-login">
-                <button>Iniciar Sesión</button>
+                <button onclick="location.href='login.html'">Iniciar Sesión</button>
             </div>
         </div>
     </nav>
@@ -87,7 +91,7 @@
                 <p>100 productos</p>
             </div>
         </div>
-        
+
     </section>
 
     <section class="popular-section">
@@ -107,7 +111,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="populares">
                 <div class="productos-categoria ">
                     <img src="images/populares-main/cucharillas.png" alt="Cucharillas Arain Perforadas">
@@ -160,7 +164,7 @@
                 </div>
             </div>
 
-           <div class="populares">
+            <div class="populares">
                 <div class="productos-categoria ">
                     <img src="images/populares-main/explorador.png" alt="Explorador DG16">
                     <p>Explorador DG16</p>
@@ -172,7 +176,7 @@
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
     </section>
 
     <footer>
@@ -190,29 +194,31 @@
         <div class="boletin">
             <p>Suscríbete al boletín <i class="far fa-envelope"></i> </p>
             <form>
-                <p><input type="email"/>
-                <button>Suscribirse</button>
+                <p><input type="email" />
+                    <button>Suscribirse</button>
                 </p>
             </form>
         </div>
     </footer>
     <section class="after-footer">
         <p> <span> © Copyright 2020 Dentalli. All Rights Reserved. </span>
-
-            
             <span>
-            <a href="https://api.whatsapp.com/send?phone=527711299985&text=¡Buen%20día!%20Quisiera%20preguntar%20sobre%20sus%20productos." target="_blank">
-            <i class="fab fa-whatsapp"></i></a>
+                <a href="https://api.whatsapp.com/send?phone=527711299985&text=¡Buen%20día!%20Quisiera%20preguntar%20sobre%20sus%20productos."
+                    target="_blank">
+                    <i class="fab fa-whatsapp"></i></a>
 
-            <a href="https://www.facebook.com/dentallidepositodental" target="_blank">
-            <i class="fab fa-facebook"></i></a>
-            
-            <a href="mailto: grupodentalpachuca@gmail.com">
-            <i class="fa fa-envelope"></i></a>
-                
-            <a href="http://maps.google.com/?q=Depósito Dental Dentalli Grupo Dental Pachuca S.A. de C.V." target="_blank">
-            <i class="fas fa-map-marker-alt"></i></a></span>
+                <a href="https://www.facebook.com/dentallidepositodental" target="_blank">
+                    <i class="fab fa-facebook"></i></a>
+
+                <a href="mailto: grupodentalpachuca@gmail.com">
+                    <i class="fa fa-envelope"></i></a>
+
+                <a href="http://maps.google.com/?q=Depósito Dental Dentalli Grupo Dental Pachuca S.A. de C.V."
+                    target="_blank">
+                    <i class="fas fa-map-marker-alt"></i></a>
+            </span>
         </p>
     </section>
 </body>
+
 </html>
