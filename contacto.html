@@ -2,16 +2,14 @@
 <html lang="en">
 
 <head>
-    
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Dentalli</title>
 
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
-
 
     <!-- Links -->
     <link rel="stylesheet" href="css/style.css" />
@@ -25,7 +23,7 @@
     <nav>
         <img class="dentalli-logo" src="images/dentalli.png" alt="Logo Dentalli" 
         onclick="location.href='index.html'">
-
+        
         <div class="nav-links">
             <div class="ul-links">
                 <div class="glass"></div>
@@ -49,84 +47,79 @@
         </div>
     </nav>
 
-    <section class="login">
-        <div class="login-svg"></div>
-        <div class="login-data">
-            <div id="login">
-                <h3>Iniciar Sesión</h3>
-                <form class="form-login" action="">
-                    <div class="inpt-data">
-                        <label for="correo-login">Correo</label>
-                        <input type="email" id="correo-login" required>
-                    </div>
-                    
-                    <div class="inpt-data">
-                        <label for="pwrd-login">Contraseña</label>
-                        <input type="password" id="pwrd-login" required>
-                    </div>
+    <section class="contacto">
+        <div class="info-contacto">
+            <h4>Contáctanos</h4>
+            <br>
+            <div class="info-datos">
+                <p class="maps-icon"><i class="fas fa-map-marker-alt"></i>Dirección</p>
+                <p>Cto. Dr. Raúl Berber Coutiño 314, Los Cipreses, 42083 
+                    Pachuca de Soto, Hgo., México</p>
+            </div>
+            <div class="info-datos">
+                <div>
+                    <p><i class="fas fa-at"></i>Email</p>
+                    <p>grupodentalpachuca@gmail.com</p>
+                </div>
+                
+            </div>
+            <div class="info-datos">                
+                <div>
+                    <p class="whatsapp-icon"><i class="fab fa-whatsapp"></i>Whatsapp</p>
+                    <p>771 129 9985</p>
+                </div>
+                
+                <div>
+                    <p><i class="fab fa-facebook"></i>Facebook</p>
+                    <p>/dentallidepositodental</p>
+                </div>
 
-                    <label class="remember">
-                        <input type="checkbox" checked="checked">
-                        <span class="checkmark"></span>Recuérdame
-                    </label>    
+                <div>
+                    <p><i class="far fa-clock"></i>Horario</p>
+                    <p>9:00 - 19:00</p>
+                </div>  
 
-                    <div class="inpt-data">
-                        <button type="submit">Ingresar</button>
-                    </div>
-                </form>
-                <p>¿Aún no tienes cuenta? Regístrate <span class="change">aquí.</span></p>
             </div>
 
-            <div id="registro">
-                <h3>Registro</h3>
-                <form class="form-login" action="">
-                    <div class="inpt-new">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" required>
-                    </div>
+            <div class="dudas">
+                <br>
+                <h4>¿Tienes dudas? Escíbenos un mensaje</h4>
+                <br>
+                <form action="" class="dudas-form">
 
-                    <div class="apellidos">
-                        <div class="inpt-new">
-                            <label for="materno">A. Materno</label>
-                            <input type="text" id="materno" required>
+                    <div class="dudas-info">
+                        <div>
+                            <label for="nombre-dudas">Nombre <span>*</span></label>
+                            <input type="text" id="nombre-dudas" required>
                         </div>
                         
-                        <div class="inpt-new">
-                            <label for="paterno">A. Paterno</label>
-                            <input type="text" id="paterno" required>
+                        <div>
+                            <label for="email-dudas">Email <span>*</span></label>
+                            <input type="email" id="email-dudas" required>
                         </div>
+
+                        <div>
+                            <label for="tel-dudas">Teléfono</label>
+                            <input type="tel" id="tel-dudas">
+                        </div>                       
                     </div>
 
-                    <div class="inpt-new">
-                        <label for="email-new">Email</label>
-                        <input type="email" id="email-new" required>
+                    <div class="dudas-info">
+                        <label for="text-dudas">Escríbenos tus dudas <span>*</span></label>
+                        <textarea name="text-dudas" id="" cols="30" rows="10" required></textarea>
                     </div>
-
-                    <div class="inpt-new">
-                        <label for="pwrd-new">Contraseña</label>
-                        <input type="password" id="pwrd-new" required>
-                    </div>
-
-                    <div class="inpt-new">
-                        <label for="pwrd-new-conf">Confirmar contraseña</label>
-                        <input type="password" id="pwrd-new-conf" required>
-                    </div>
-
-                    <div class="inpt-new telefono">
-                        <label for="numero">Número de Teléfono</label>
-                        <input type="tel" id="numero" maxlength="10" required>
-                    </div>
-
-                    <div class="inpt-new">
-                        <button type="submit">Ingresar</button>
-                    </div>
-
+                    <button type="submit">Enviar</button>
                 </form>
-                <p>¿Ya tienes cuenta? Inicia sesión <span class="change">aquí.</span></p>
             </div>
         </div>
-    </section>
 
+        <div class="map">
+            <h4>Encuéntanos aquí</h4>
+            <br>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3747.8352601590373!2d-98.76935848509734!3d20.05734188653255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1a19828db5b27%3A0xe9012268922069a5!2sDep%C3%B3sito%20Dental%20Dentalli%20Grupo%20Dental%20Pachuca%20S.A.%20de%20C.V.!5e0!3m2!1ses-419!2smx!4v1608064514520!5m2!1ses-419!2smx" 
+            width="98%" height="96%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+    </section>
 
     <footer>
         <div class="footer-logo">
@@ -170,4 +163,3 @@
     </section>
 
 </body>
-</html>
