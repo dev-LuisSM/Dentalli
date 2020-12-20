@@ -28,61 +28,362 @@ $(document).ready(function () {
         }
     });
 
+
+
+
+
     /* Términos y Condiciones - Políticas de Privacidad */
     $("#pdp-flag").click(function(){
         if (typeof(Storage) !== "undefined") 
-            localStorage.setItem("page", "tyc");      
+            localStorage.setItem("page", "pdp");      
     });
 
     $("#tyc-flag").click(function(){
         if (typeof(Storage) !== "undefined") 
-            localStorage.setItem("page", "pdp");
+            localStorage.setItem("page", "tyc");
     });
+
+
+    $(".ter-con").hide();
+    $(".pol-priv").hide();
 
     var politica;
     var terminos;
-    if($(".terminos").length){
-        var ls = localStorage.getItem("page");
-        if(ls == "pdp"){
-            $(".ter-con").slideDown(750);
-            terminos = false;
-            politica = true;
-            $(".tc").toggleClass("rotate");
-        }
-        else if(ls == "tyc"){
-            $(".pol-priv").slideDown(750);
-            politica = false;
-            terminos = true;
-            $(".pp").toggleClass("rotate");
-        }
+    var ls = localStorage.getItem("page");
+
+    function slideInfoTrue(elmnt1, elmnt2){
+        $(elmnt1).slideDown(750);
+        $(elmnt2).toggleClass("rotate");
     }
 
+    function slideInfoFalse(elmnt1, elmnt2){
+        $(elmnt1).slideUp(750);
+        $(elmnt2).removeClass("rotate");
+    }
+
+    if(ls == "pdp"){
+        slideInfoTrue(".pol-priv", ".pp")
+        terminos = true;
+        politica = false;
+    }
+    else if(ls == "tyc"){
+        slideInfoTrue(".ter-con", ".tc")
+        politica = true;
+        terminos = false;
+    }
+
+    /* Click to Slide */
     $(".pp").click(function(){
-        if(politica == false){
-            $(".pol-priv").slideUp(750);
-            politica = true;
-            $(".pp").removeClass("rotate");
-        }
-        else if(politica){
-            $(".pol-priv").slideDown(750);
+        if(politica){
+            slideInfoTrue(".pol-priv", this);
             politica = false;
-            $(".pp").toggleClass("rotate");
+        } 
+        else{
+            slideInfoFalse(".pol-priv", this);
+            politica = true;
         }
     });
 
     $(".tc").click(function(){
-        var rotate = 0; 
-
-        if(terminos == false){
-            $(".ter-con").slideUp(750);
-            terminos = true;
-            $(".tc").removeClass("rotate");
-        }
-        else if(terminos){
-            $(".ter-con").slideDown(750);
+        if(terminos){
+            slideInfoTrue(".ter-con", this);
             terminos = false;
-            $(".tc").toggleClass("rotate");
+        } 
+        else{
+            slideInfoFalse(".ter-con", this);
+            terminos = true;
+        }
+    });
+    
+    /* Tienda - Categorías */
+
+    /* LocalStorage de Tienda */
+    $("#to-inst").click(function(){
+        window.location = "tienda.html";
+        if (typeof(Storage) !== "undefined") 
+            localStorage.setItem("categoria", "inst");  
+    });
+
+    $("#to-cons").click(function(){
+        window.location = "tienda.html";
+         if (typeof(Storage) !== "undefined") 
+            localStorage.setItem("categoria", "cons"); 
+    });
+
+    $("#to-oper").click(function(){
+        window.location = "tienda.html";
+         if (typeof(Storage) !== "undefined") 
+            localStorage.setItem("categoria", "oper"); 
+    });
+
+    $("#to-orto").click(function(){
+        window.location = "tienda.html";
+         if (typeof(Storage) !== "undefined") 
+            localStorage.setItem("categoria", "orto"); 
+    });
+
+    $("#to-eqpo").click(function(){
+        window.location = "tienda.html";
+         if (typeof(Storage) !== "undefined") 
+            localStorage.setItem("categoria", "eqpo"); 
+    });
+
+    $("#to-endo").click(function(){
+        window.location = "tienda.html";
+         if (typeof(Storage) !== "undefined") 
+            localStorage.setItem("categoria", "endo"); 
+    });
+
+    $("#instrumental").hide();
+    $("#consumible").hide();
+    $("#operatoria").hide();
+    $("#ortodoncia").hide();
+    $("#equipo").hide();
+    $("#endodoncia").hide();
+
+    var instrumental;
+    var consumible;
+    var operatoria;
+    var ortodoncia;
+    var equipo;
+    var endodoncia;
+
+    var categoriaTienda = localStorage.getItem("categoria");
+
+    /* Cargar tamaño de las categorías antes de mostrarlas en Chrome */
+    setTimeout(function(){
+        switch(categoriaTienda){
+            case "inst":
+                consumible = operatoria = ortodoncia = equipo = endodoncia = true;
+                instrumental = false;
+                slideInfoTrue("#instrumental", ".ins")
+                break;
+
+            case "cons":
+                instrumental = operatoria = ortodoncia = equipo = endodoncia = true;
+                consumible = false;       
+                slideInfoTrue("#consumible", ".con")
+                $("body,html").animate({scrollTop: $(".con").offset().top},800);
+                break;            
+            
+            case "oper":
+                consumible = instrumental = ortodoncia = equipo = endodoncia = true;
+                operatoria = false;         
+                slideInfoTrue("#operatoria", ".opr")
+                $("body,html").animate({scrollTop: $(".opr").offset().top},800);         
+                break;        
+            
+            case "orto":
+                consumible = operatoria = instrumental = equipo = endodoncia = true;
+                ortodoncia = false;      
+                slideInfoTrue("#ortodoncia", ".ort")
+                $("body,html").animate({scrollTop: $(".ort").offset().top},800);
+                break;        
+            
+            case "eqpo":
+                consumible = operatoria = ortodoncia = instrumental = endodoncia = true;
+                equipo = false;            
+                slideInfoTrue("#equipo", ".eqp")
+                $("body,html").animate({scrollTop: $(".eqp").offset().top},800);
+                break;        
+            
+            case "endo":
+                consumible = operatoria = ortodoncia = equipo = instrumental = true;
+                endodoncia = false;     
+                slideInfoTrue("#endodoncia", ".end")
+                $("body,html").animate({scrollTop: $(".end").offset().top},800);
+                break;                   
+        }
+    }, 100);
+
+    $(".ins").click(function(){
+        if(instrumental){
+            slideInfoTrue("#instrumental", this);
+            instrumental = false;
+        } 
+        else{
+            slideInfoFalse("#instrumental", this);
+            instrumental = true;
         }
     });
 
+    $(".con").click(function(){
+        if(consumible){
+            slideInfoTrue("#consumible", this);
+            consumible = false;
+        } 
+        else{
+            slideInfoFalse("#consumible", this);
+            consumible = true;
+        }
+    });
+
+    $(".opr").click(function(){
+        if(operatoria){
+            slideInfoTrue("#operatoria", this);
+            operatoria = false;
+        } 
+        else{
+            slideInfoFalse("#operatoria", this);
+            operatoria = true;
+        }
+    });
+
+    $(".ort").click(function(){
+        if(ortodoncia){
+            slideInfoTrue("#ortodoncia", this);
+            ortodoncia = false;
+        } 
+        else{
+            slideInfoFalse("#ortodoncia", this);
+            ortodoncia = true;
+        }
+    });
+
+    $(".eqp").click(function(){
+        if(equipo){
+            slideInfoTrue("#equipo", this);
+            equipo = false;
+        } 
+        else{
+            slideInfoFalse("#equipo", this);
+            equipo = true;
+        }
+    });
+
+    $(".end").click(function(){
+        if(endodoncia){
+            slideInfoTrue("#endodoncia", this);
+            endodoncia = false;
+        } 
+        else{
+            slideInfoFalse("#endodoncia", this);
+            endodoncia = true;
+        }
+    });
+
+
+
+    /* Ingresar id a cada item */
+
+    function setId(elementoDiv, idx){
+        let indice = idx;
+        let elementDiv = $(`${elementoDiv} .productos-categoria`)
+        $(elementDiv).each(function(index){
+            $(this).attr("id",`${indice}-${index+1}`);
+        });
+
+        let elementBtn = $(`${elementoDiv} .pop-vista`)
+        $(elementBtn).each(function(index){
+            $(this).attr("id",`${indice}-${index+1}btn`);
+        });
+    }
+
+    setId(`#instrumental`, `int`);
+    setId(`#consumible`, `con`);
+    setId(`#operatoria`, `opr`);
+    setId(`#ortodoncia`, `ort`);
+    setId(`#equipo`, `eqp`);
+    setId(`#endodoncia`, `end`);
+
+    /* Append Pop */
+    function popDiv(imgSource, idDiv, pItem, pPrice){
+        $('.pop-item-sel').fadeIn(1000).css({"display":"flex"});      
+
+        $('.fa-times').css({"display":"block"})
+        $(`<div class="pop" id="img-pop">`+
+        `<i class="fas fa-times" id="fa-primero"></i>`+
+        `<div> <img src="${imgSource}" alt="${idDiv}"> </div>`+
+        `<div> <h2>${pItem}</h2> <p>${pPrice}</p>`+ 
+        `<p>Producto disponible</p>`+
+        `<button class="btn-pop"> Agregar al carrito </button> </div>`+
+        `<i class="fas fa-times" id="fa-segundo"></i></div>`)
+        .hide()
+        .appendTo(".pop-item-sel")
+        .toggle(750);  
+    }
+
+    /* Remove Pop */
+    $(document).mouseup(function (e) {
+        var container = $(".pop");
+        if (!container.is(e.target)&& container.has(e.target).length === 0){
+            $(".pop-item-sel").fadeOut();
+            container.fadeOut();
+            container.remove();
+        }
+    });
+
+    /* Clic en el ícono para cerrar */
+    /* El "on.('click')" funciona para triggers creados después del DOM */
+    $(document).on('click', '.fa-times', function() {
+        $(".pop-item-sel").fadeOut();
+        $(".pop").fadeOut();
+        $(".pop").remove();
+    });
+
+    /* Obtener id de un producto por categoría */
+    $("#instrumental .pop-vista").click(function(){
+        let idBtn = $(this).attr("id");
+        let idDiv = idBtn.substring(0,5);
+        let imgSource = $(`#${idDiv} img`).attr('src');
+        let pItem = $(`#${idDiv} p:first`).html();
+        let pPrice = $(`#${idDiv} p:last`).html();
+
+        popDiv(imgSource, idDiv, pItem, pPrice);
+    });
+
+    $("#consumible .pop-vista").click(function(){
+        let idBtn = $(this).attr("id");
+        let idDiv = idBtn.substring(0,5);
+        let imgSource = $(`#${idDiv} img`).attr('src');
+        let pItem = $(`#${idDiv} p:first`).html();
+        let pPrice = $(`#${idDiv} p:last`).html();
+
+        popDiv(imgSource, idDiv, pItem, pPrice);
+    });
+
+    $("#operatoria .pop-vista").click(function(){
+        let idBtn = $(this).attr("id");
+        let idDiv = idBtn.substring(0,5);
+        let imgSource = $(`#${idDiv} img`).attr('src');
+        let pItem = $(`#${idDiv} p:first`).html();
+        let pPrice = $(`#${idDiv} p:last`).html();
+
+        popDiv(imgSource, idDiv, pItem, pPrice);
+    });
+
+    $("#ortodoncia .pop-vista").click(function(){
+        let idBtn = $(this).attr("id");
+        let idDiv = idBtn.substring(0,5);
+        let imgSource = $(`#${idDiv} img`).attr('src');
+        let pItem = $(`#${idDiv} p:first`).html();
+        let pPrice = $(`#${idDiv} p:last`).html();
+
+        popDiv(imgSource, idDiv, pItem, pPrice);
+    });
+
+    $("#equipo .pop-vista").click(function(){
+        let idBtn = $(this).attr("id");
+        let idDiv = idBtn.substring(0,5);
+        let imgSource = $(`#${idDiv} img`).attr('src');
+        let pItem = $(`#${idDiv} p:first`).html();
+        let pPrice = $(`#${idDiv} p:last`).html();
+
+        popDiv(imgSource, idDiv, pItem, pPrice);
+    });
+
+    $("#endodoncia .pop-vista").click(function(){
+        let idBtn = $(this).attr("id");
+        let idDiv = idBtn.substring(0,5);
+        let imgSource = $(`#${idDiv} img`).attr('src');
+        let pItem = $(`#${idDiv} p:first`).html();
+        let pPrice = $(`#${idDiv} p:last`).html();
+
+        popDiv(imgSource, idDiv, pItem, pPrice);
+    });
+    
+
+    
+
+    
 });
