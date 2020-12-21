@@ -264,8 +264,7 @@ $(document).ready(function () {
 
 
 
-    /* Ingresar id a cada item */
-
+    /* Ingresar id a cada item en TIENDA*/
     function setId(elementoDiv, idx){
         let indice = idx;
         let elementDiv = $(`${elementoDiv} .productos-categoria`)
@@ -279,13 +278,6 @@ $(document).ready(function () {
         });
     }
 
-    setId(`#instrumental`, `int`);
-    setId(`#consumible`, `con`);
-    setId(`#operatoria`, `opr`);
-    setId(`#ortodoncia`, `ort`);
-    setId(`#equipo`, `eqp`);
-    setId(`#endodoncia`, `end`);
-
     /* Append Pop */
     function popDiv(imgSource, idDiv, pItem, pPrice){
         $('.pop-item-sel').fadeIn(1000).css({"display":"flex"});      
@@ -294,8 +286,8 @@ $(document).ready(function () {
         $(`<div class="pop" id="img-pop">`+
         `<i class="fas fa-times" id="fa-primero"></i>`+
         `<div> <img src="${imgSource}" alt="${idDiv}"> </div>`+
-        `<div> <h2>${pItem}</h2> <p>${pPrice}</p>`+ 
-        `<p>Producto disponible</p>`+
+        `<div> <div><h2>${pItem}</h2> <p>${pPrice}</p></div>`+ 
+        `<span>Producto disponible</span>`+
         `<button class="btn-pop"> Agregar al carrito </button> </div>`+
         `<i class="fas fa-times" id="fa-segundo"></i></div>`)
         .hide()
@@ -320,6 +312,13 @@ $(document).ready(function () {
         $(".pop").fadeOut();
         $(".pop").remove();
     });
+
+    setId(`#instrumental`, `int`);
+    setId(`#consumible`, `con`);
+    setId(`#operatoria`, `opr`);
+    setId(`#ortodoncia`, `ort`);
+    setId(`#equipo`, `eqp`);
+    setId(`#endodoncia`, `end`);
 
     /* Obtener id de un producto por categoría */
     $("#instrumental .pop-vista").click(function(){
@@ -381,9 +380,23 @@ $(document).ready(function () {
 
         popDiv(imgSource, idDiv, pItem, pPrice);
     });
-    
+
 
     
-
+    /* INDEX */
+    setId(`#populares`, `ppl`);
     
+    /* INDEX */
+    $("#populares .pop-vista").click(function(){
+        let idBtn = $(this).attr("id");
+        let idDiv = idBtn.substring(0,5);
+        let imgSource = $(`#${idDiv} img`).attr('src');
+        let pItem = $(`#${idDiv} p:first`).html();
+        let pPrice = $(`#${idDiv} p:last`).html();
+
+        popDiv(imgSource, idDiv, pItem, pPrice);
+    });
+
+
 });
+

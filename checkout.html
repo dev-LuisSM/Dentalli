@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Dentalli</title>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <!-- Links -->
+    <link rel="stylesheet" href="css/style.css"/>
+    <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+    <link rel="icon" href="images/dentalli-icon.ico">
+
+</head>
+
+<body style="background: none;">
+    <nav class="nav-tienda">
+        <img class="dentalli-logo" src="images/dentalli.png" alt="Logo Dentalli" 
+        onclick="location.href='index.html'">
+        
+        <div class="nav-links">
+            <div class="ul-links">
+                <div class="glass"></div>
+                <ul>
+                    <h3>MENÚ</h3>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="aboutus.html">Nosotros</a></li>
+                    <li><a href="tienda.html">Categorías</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <img src="images/dentalli-icon.ico" alt="">
+                </ul>
+            </div>
+
+            <div class="nav-mobile">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <div class="btn-login">
+                <button onclick="location.href='login.html'">Iniciar Sesión</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="checkout">
+        
+
+        <div class="producto-co">
+            <h3>Carrito de Compras</h3>
+
+            <table>
+                <tr class="tb-titulo">
+                    <th class="tb-producto">Producto</th>
+                    <th class="center-th">Importe</th>
+                    <th class="center-th">Cantidad</th>
+                    <th class="center-th">Subtotal</th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div>
+                            <img src="images/populares-main/cucharillas.png" alt="Cucharillas Arain Perforadas">
+                            <p>Cucharillas Arain Adulto Perforadas</p>
+                        </div>
+                    </td>
+                    <td>$50.00</td>
+                    <td><input type="number" name="cantidad" min="1" value="1" class="qty">                    </td>
+                    <td>$50.00</td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <div>
+                            <img src="images/populares-main/cucharillas.png" alt="Cucharillas Arain Perforadas">
+                            <p>Cucharillas Arain Adulto Perforadas</p>
+                        </div>
+                    </td>
+                    <td>$50.00</td>
+                    <td><input type="number" name="cantidad" min="1" value="1" class="qty">                    </td>
+                    <td>$50.00</td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <div>
+                            <img src="images/populares-main/cucharillas.png" alt="Cucharillas Arain Perforadas">
+                            <p>Cucharillas Arain Adulto Perforadas</p>
+                        </div>
+                    </td>
+                    <td>$50.00</td>
+                    <td><input type="number" name="cantidad" min="1" value="1" class="qty">                    </td>
+                    <td>$50.00</td>
+                </tr>
+            </table>
+
+            <div class="cards">
+                <div class="card-table">
+                    <div class="card-img">
+                        <img src="images/populares-main/cucharillas.png" alt="Cucharillas Arain Perforadas">
+                        <p>Cucharillas Arain Adulto Perforadas</p>
+                    </div>
+                    <div class="card-info">
+                        <h4>Importe</h4>
+                        <p>$50.00</p>
+    
+                        <h4>Cantidad</h4>
+                        <input type="number" name="cantidad" min="1" value="1" class="qty">
+                        
+                        <h4>Subtotal</h4>
+                        <p>$50.00</p>
+                    </div>
+                </div>
+                <div class="card-table">
+                    <div class="card-img">
+                        <img src="images/populares-main/cucharillas.png" alt="Cucharillas Arain Perforadas">
+                        <p>Cucharillas Arain Adulto Perforadas</p>
+                    </div>
+                    <div class="card-info">
+                        <h4>Importe</h4>
+                        <p>$50.00</p>
+    
+                        <h4>Cantidad</h4>
+                        <input type="number" name="cantidad" min="1" value="1" class="qty">
+                        
+                        <h4>Subtotal</h4>
+                        <p>$50.00</p>
+                    </div>
+                </div>
+                <div class="card-table">
+                    <div class="card-img">
+                        <img src="images/populares-main/cucharillas.png" alt="Cucharillas Arain Perforadas">
+                        <p>Cucharillas Arain Adulto Perforadas</p>
+                    </div>
+                    <div class="card-info">
+                        <h4>Importe</h4>
+                        <p>$50.00</p>
+    
+                        <h4>Cantidad</h4>
+                        <input type="number" name="cantidad" min="1" value="1" class="qty">
+                        
+                        <h4>Subtotal</h4>
+                        <p>$50.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ticket">
+            <div>
+                <h3>Resumen de compra</h3>
+                <hr>
+                    <div class="notaDes">
+                        <p>Envío</p>
+                        <p>$42</p>
+                    </div>
+                    <div class="notaDes">
+                        <p>Subtotal</p>
+                        <p>$150</p>
+                    </div>
+                    <div class="notaDes">
+                        <p>I.V.A</p>
+                        <p>$24</p>
+                    </div>
+                <hr>
+                <div class="notaDes"><h3>TOTAL</h3><h3>$216</h3></div>
+                <button>Proceder con el pago</button>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="images/dentalli-nombre.png" alt="Logo Dentalli">
+        </div>
+        <div class="ul-footer">
+            <ul>
+                <li><a href="contacto.html">Contáctanos</a></li>
+                <li><a href="aboutus.html">Nosotros</a></li>
+                <li id="pdp-flag"><a href="terminos.html">Política de Privacidad</a></li>
+                <li id="tyc-flag"><a href="terminos.html">Términos y Condiciones</a></li>
+            </ul>
+        </div>
+        <div class="boletin">
+            <p>Suscríbete al boletín <i class="far fa-envelope"></i> </p>
+            <form>
+                <p><input type="email" />
+                    <button>Suscribirse</button>
+                </p>
+            </form>
+        </div>
+    </footer>
+    <section class="after-footer">
+        <p> <span> © Copyright 2020 Dentalli. All Rights Reserved. </span>
+            <span>
+                <a href="https://api.whatsapp.com/send?phone=527711299985&text=¡Buen%20día!%20Quisiera%20preguntar%20sobre%20sus%20productos."
+                    target="_blank">
+                    <i class="fab fa-whatsapp"></i></a>
+
+                <a href="https://www.facebook.com/dentallidepositodental" target="_blank">
+                    <i class="fab fa-facebook"></i></a>
+
+                <a href="mailto: grupodentalpachuca@gmail.com">
+                    <i class="fa fa-envelope"></i></a>
+
+                <a href="http://maps.google.com/?q=Depósito Dental Dentalli Grupo Dental Pachuca S.A. de C.V."
+                    target="_blank">
+                    <i class="fas fa-map-marker-alt"></i></a>
+            </span>
+        </p>
+    </section>
+
+</body>

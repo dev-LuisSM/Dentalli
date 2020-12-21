@@ -31,6 +31,13 @@ nav{
     justify-content: flex-start;    
 }
 
+.nav-tienda{
+    background-image: url("../images/waves/wave-tienda.svg");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: cover;
+}
+
 
 .dentalli-logo{
     height: 70%;
@@ -536,14 +543,21 @@ section.login{
     width: 64% !important;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
 
-input[type=number] {
-  -moz-appearance: textfield;
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    opacity: 1;
+    cursor:pointer;
+    display:block;
+    text-align:center;
+    position:relative;
+    background: url('../images/waves/arrow.svg') no-repeat 50% 50%;  
+    width: 14px;
+    height: 14px;
+    padding: 4px;
+    position: relative;
+    right: 4px;
+    border-radius: 28px;
 }
 
 
@@ -723,7 +737,7 @@ textarea{
 
 /* ----- TIENDA ----- */
 
-.tienda{
+.tienda, .checkout{
     padding: 4% 4% 0 4%;
 }
 
@@ -795,7 +809,7 @@ textarea{
 }
 
 .pop{
-    width: 70%;
+    width: 60%;
     background-color: white;
     background-image: url("../images/waves/pop.svg");
     background-position: right;
@@ -808,6 +822,9 @@ textarea{
 
 .pop div:first-of-type{
     width: 58%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .pop div:last-of-type{
@@ -815,13 +832,17 @@ textarea{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
     padding: 6% 2%;
     box-sizing: border-box;
 }
 
+.pop div:last-of-type div{
+    width: 100%;
+}
+
 .pop img{
     width: 65%;
-    margin-left: 10%;
 }
 
 .pop button{
@@ -844,8 +865,177 @@ textarea{
     cursor: pointer;
 }
 
+.pop div h2{
+    font-size: x-large;
+}
+
+.pop div:last-of-type div p{
+    font-size: larger;
+}
+
+.pop span{
+    color: grey;
+}
+
+
+
 #fa-primero{
     display: none;
+}
+
+
+/* Checkout */
+.checkout{
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 75vh;
+}
+
+.producto-co{
+    width: 60%;
+}
+
+.ticket{
+    width: 40%;
+    padding: 4%;   
+    box-sizing: border-box; 
+}
+
+table{
+    table-layout: fixed;
+    width: 100%;  
+    border-collapse: separate; 
+    border-spacing:0 20px; 
+}
+
+th{
+    text-align: start;
+    font-weight: 700;
+}
+
+.tb-titulo{
+    border-bottom: 1px solid black;
+}
+
+
+.tb-producto{
+    width: 50%;
+}
+
+table img{
+    width: 30%;
+}
+
+table input, .card-info input{
+    width: 60%;
+    font-family: 'Poppins';
+    margin: 0;
+    border: 0;
+    outline: none;
+    font-size: initial;
+    text-align: center;
+}
+
+td, .center-th{
+    text-align: center;
+}
+
+td div{
+    display: flex;
+    align-items: center;
+}
+
+td div div{
+    display: flex;
+    flex-direction: column;
+}
+
+.space-tr{
+    margin: 2% 0;
+}
+
+.fa-sort-down{
+    cursor: pointer;
+}
+
+
+.notaDes{
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    margin: 3% 0;
+}
+
+.notaDes p:last-of-type, .notaDes h3:last-of-type{
+    width: 20%;
+}
+
+.ticket button{
+    width: 100%;
+    padding: 1%;
+    background-color: #C9E3FE;
+
+    border-radius: 2vh;
+    border: none;
+    outline: none;
+
+    font-family: "Poppins";
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.ticket button:hover{
+    background-color: white;
+    border: 2px solid #C9E3FE;
+}
+
+.ticket div:first-child{
+    border: 1px solid black;
+    padding: 6% 5%;
+}
+
+
+
+/* Cards - Sustituya a la tabla */
+.cards{
+    display: none;
+}
+
+.card-table{
+    display: flex;
+    margin: 5% 0;
+    border-top: 1px solid;
+}
+
+.card-table:first-of-type{
+    border: 0;
+}
+
+.card-table img{
+    width: 60%;
+}
+
+.card-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    width: 60%;
+    padding: 5% 0;
+}
+
+.card-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 40%;
+}
+
+.card-info p, .card-info input{
+    margin-bottom: 10%;
 }
 
 
@@ -984,9 +1174,22 @@ textarea{
     }
 
     .pop{
-        width: 90%;
+        width: 70%;
         background-image: url("../images/waves/pop-mobile.svg");
         background-position: bottom;
+    }
+
+    .pop img{
+        margin: 0;
+    }
+
+    .tienda p i{
+        padding: 1.7%;
+    }
+
+    .tienda input{
+        width: 50%;
+        padding-left: 7.5%;
     }
 
     .pop div:first-of-type {
@@ -999,6 +1202,10 @@ textarea{
         width: 100%;
         justify-content: center;
         align-items: center;
+    }
+
+    .pop div p:first-of-type{
+        margin: -2% 0 4% 0;
     }
 
     .pop div:last-of-type *{
@@ -1019,4 +1226,20 @@ textarea{
     .items, .productos-categoria {
         width: 26%;
     }
+}
+
+
+@media only screen and (max-width: 900px){
+    .ticket, .producto-co{
+        width: 100%;
+    }
+
+    table{
+        display: none;
+    }
+
+    .cards{
+        display: block;
+    }
+
 }
