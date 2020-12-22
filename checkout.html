@@ -5,16 +5,19 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Dentalli</title>
+    <title>Dentalli - Depósito Dental</title>
 
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.4/sweetalert2.min.js"></script>
+
 
     <!-- Links -->
     <link rel="stylesheet" href="css/style.css"/>
     <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
     <link rel="icon" href="images/dentalli-icon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.4/sweetalert2.min.css">
 
 </head>
 
@@ -41,7 +44,24 @@
             </div>
 
             <div class="btn-login">
-                <button onclick="location.href='login.html'">Iniciar Sesión</button>
+                <!-- Si está loggeado, jQuery elimina el botón, función en línea 31 -->
+                <div class="no-logged">
+                    <button onclick="location.href='login.html'">Iniciar Sesión</button>
+                </div>
+                
+                <div class="logged">
+                    <div id="user">
+                        <i class="far fa-user-circle"></i>
+                        <div>
+                            <p>Nombre de Usuario</p>
+                            <p><a href="">Cerrar Sesión</a></p>
+                        </div>
+                    </div>
+                    <div id="basket">
+                        <i class="fas fa-shopping-basket"></i>
+                        <div>3</div>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -58,9 +78,12 @@
                     <th class="center-th">Importe</th>
                     <th class="center-th">Cantidad</th>
                     <th class="center-th">Subtotal</th>
+                    <th></th>
                 </tr>
 
-                <tr>
+                <!-- Clase de tr y de card-table debe de ser la misma que el id de <i> -->
+
+                <tr class="item-no1">
                     <td>
                         <div>
                             <img src="images/populares-main/glick.png" alt="Glick No. 1">
@@ -70,10 +93,10 @@
                     <td>$50.00</td>
                     <td><input type="number" name="cantidad" min="1" value="1" class="qty">                    </td>
                     <td>$50.00</td>
+                    <td><i class="fas fa-times" id="item-no1"></i></td>
                 </tr>
 
-
-                <tr>
+                <tr class="item-no2">
                     <td>
                         <div>
                             <img src="images/populares-main/explorador.png" alt="Explorador DG16">
@@ -83,10 +106,10 @@
                     <td>$50.00</td>
                     <td><input type="number" name="cantidad" min="1" value="1" class="qty">                    </td>
                     <td>$50.00</td>
+                    <td><i class="fas fa-times" id="item-no2"></i></td>
                 </tr>
 
-
-                <tr>
+                <tr class="item-no3">
                     <td>
                         <div>
                             <img src="images/populares-main/cucharillas.png" alt="Cucharillas Arain Perforadas">
@@ -96,16 +119,19 @@
                     <td>$50.00</td>
                     <td><input type="number" name="cantidad" min="1" value="1" class="qty">                    </td>
                     <td>$50.00</td>
+                    <td><i class="fas fa-times" id="item-no3"></i></td>
                 </tr>
             </table>
 
             <div class="cards">
-                <div class="card-table">
+                <div class="card-table item-no1">
                     <div class="card-img">
                         <img src="images/populares-main/explorador.png" alt="Explorador DG16">
                         <p>Explorador DG16</p>
                     </div>
                     <div class="card-info">
+                        <i class="fas fa-times" id="item-no1"></i>
+
                         <h4>Importe</h4>
                         <p>$50.00</p>
     
@@ -116,12 +142,14 @@
                         <p>$50.00</p>
                     </div>
                 </div>
-                <div class="card-table">
+                <div class="card-table item-no2">
                     <div class="card-img">
                         <img src="images/populares-main/glick.png" alt="Glick No. 1">
                         <p>Glick No. 1</p>
                     </div>
                     <div class="card-info">
+                        <i class="fas fa-times" id="item-no2"></i>
+
                         <h4>Importe</h4>
                         <p>$50.00</p>
     
@@ -132,12 +160,14 @@
                         <p>$50.00</p>
                     </div>
                 </div>
-                <div class="card-table">
+                <div class="card-table item-no3">
                     <div class="card-img">
                         <img src="images/populares-main/cucharillas.png" alt="Cucharillas Arain Perforadas">
                         <p>Cucharillas Arain Adulto Perforadas</p>
                     </div>
                     <div class="card-info">
+                        <i class="fas fa-times" id="item-no3"></i>
+
                         <h4>Importe</h4>
                         <p>$50.00</p>
     
@@ -169,7 +199,7 @@
                     </div>
                 <hr>
                 <div class="notaDes"><h3>TOTAL</h3><h3>$216</h3></div>
-                <button>Proceder con el pago</button>
+                <button id="btn-checkout">Proceder con el pago</button>
             </div>
         </div>
 

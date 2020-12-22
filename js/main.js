@@ -28,7 +28,11 @@ $(document).ready(function () {
         }
     });
 
+    $(".no-logged").remove();
 
+    $(".fa-user-circle").click(function(){
+        $("#user div").toggle("slide");
+    });
 
 
 
@@ -398,5 +402,26 @@ $(document).ready(function () {
     });
 
 
+    //Eliminar item
+    $(".fa-times").click(function(){
+        let item = $(this).attr("id");
+        $(`.${item}`).fadeOut(300, function(){ $(item).remove();});
+    });
+
+    /* Botón de compra */
+    $("#btn-checkout").click(function(){
+        swal({
+            title: "Tu compra está en proceso.",
+            text: "En breve nos pondremos en contacto contigo.",
+            type: "success",
+            confirmButtonColor: '#A7DBD2',
+            confirmButtonText: 'OK'
+        }).then(
+            function () { window.location = "index.html" }
+        );
+    }); 
+
+
+   
 });
 
