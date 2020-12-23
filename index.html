@@ -10,6 +10,7 @@
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/slider.js"></script>
 
     <!-- Links -->
     <link rel="stylesheet" href="css/style.css" />
@@ -94,82 +95,39 @@
 
     </section>
 
-    <section class="popular-section">
-        <h2>Productos populares</h2>
-        <p>Revisa nuestros productos más populares</p>
+    <section class="slider">
+        <h2>Nuestros proveedores</h2>
+        <p>Conoce a nuestros proveedores</p>
 
-        <div class="categorias" id="populares">
-            <div class="items">
-                <div class="productos-categoria ">
-                    <img src="images/populares-main/cucharillas 2.png" alt="Cucharillas Arain">
-                    <p>Cucharillas Arain</p>
-                    <p>$000.00</p>
-                    <div class="btns">
-                        <button class="pop-vista">Vista rápida</button>
-                        <button class="sendItem">Agregar al carrito</button>
-                    </div>
-                </div>
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <div class="img-slider" style="height: 30vh; background-image: url('https://picsum.photos/1200/400?random=1');"></div>
+                <div class="text">Descripción No.1</div>
             </div>
 
-            <div class="items">
-                <div class="productos-categoria ">
-                    <img src="images/populares-main/cucharillas.png" alt="Cucharillas Arain Perforadas">
-                    <p>Cucharillas Arain P.</p>
-                    <p>$000.00</p>
-                    <div class="btns">
-                        <button class="pop-vista">Vista rápida</button>
-                        <button class="sendItem">Agregar al carrito</button>
-                    </div>
-                </div>
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                <div class="img-slider" style="height: 30vh; background-image: url('https://picsum.photos/1200/400?random=2');"></div>
+                <div class="text">Descripción No.2</div>
             </div>
 
-            <div class="items">
-                <div class="productos-categoria ">
-                    <img src="images/populares-main/gprx.png" alt="Gancho p/RX">
-                    <p>Gancho p/RX</p>
-                    <p>$000.00</p>
-                    <div class="btns">
-                        <button class="pop-vista">Vista rápida</button>
-                        <button class="sendItem">Agregar al carrito</button>
-                    </div>
-                </div>
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <div class="img-slider" style="height: 30vh; background-image: url('https://picsum.photos/1200/400?random=3');"></div>
+                <div class="text">Descripción No.3</div>
             </div>
 
-            <div class="items">
-                <div class="productos-categoria ">
-                    <img src="images/populares-main/glick.png" alt="Glick No. 1">
-                    <p>Glick No. 1</p>
-                    <p>$000.00</p>
-                    <div class="btns">
-                        <button class="pop-vista">Vista rápida</button>
-                        <button class="sendItem">Agregar al carrito</button>
-                    </div>
-                </div>
-            </div>
+            <a class="prev">&#10094;</a>
+            <a class="next">&#10095;</a>
 
-            <div class="items">
-                <div class="productos-categoria ">
-                    <img src="images/populares-main/portaagujas.png" alt="Porta agujas Mayo 14 cm">
-                    <p>Porta agujas Mayo 14 cm</p>
-                    <p>$000.00</p>
-                    <div class="btns">
-                        <button class="pop-vista">Vista rápida</button>
-                        <button class="sendItem">Agregar al carrito</button>
-                    </div>
-                </div>
-            </div>
+        </div>
 
-            <div class="items">
-                <div class="productos-categoria ">
-                    <img src="images/populares-main/explorador.png" alt="Explorador DG16">
-                    <p>Explorador DG16</p>
-                    <p>$000.00</p>
-                    <div class="btns">
-                        <button class="pop-vista">Vista rápida</button>
-                        <button class="sendItem">Agregar al carrito</button>
-                    </div>
-                </div>
-            </div>
+        <div>
+            <span class="dot" id="1"></span>
+            <span class="dot" id="2"></span>
+            <span class="dot" id="3"></span>
         </div>
     </section>
 
